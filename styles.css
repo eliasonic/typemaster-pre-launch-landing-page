@@ -1,7 +1,6 @@
 #container {
     width: 1440px;
     height: 1870px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Barlow', sans-serif;
     display: grid;
     grid-template-columns: 165px 1110px 165px;
@@ -12,6 +11,7 @@
         "side2 content2 ."
         ". content3 ."
         ". footer .";
+    overflow-x: hidden;    
 }
 .header {
     grid-area: header;
@@ -65,6 +65,10 @@
     text-transform: uppercase;
     color: #162542;
 }
+.header-button:hover {
+    background: #162542;
+    color: #FFFFFF;
+}
 .main {
     width: 445px;
     height: 312px;    
@@ -95,6 +99,10 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
+.main-button:hover {
+    background: #FF9B62;
+    color: #FFFFFF;
+}
 .info-text {
     margin-left: 40px;
     font-size: 16px;
@@ -112,6 +120,10 @@
     height: 480px;
     border-radius: 20px;
 }
+/*.phone-keyboard-container {
+    background-color: #F16718;
+    mix-blend-mode: multiply;
+}*/
 .glass-keyboard {
     width: 445px;
     height: 480px;
@@ -156,4 +168,57 @@
     font-weight: 500;
     line-height: 26px;
     color: #7B8BAD;
+}
+@media (max-width: 375px) {
+    #container {
+        grid-template-columns: auto;
+        grid-template-rows: 135px auto auto auto 172px;   
+        grid-template-areas: 
+            "header" 
+            "content1"
+            "content2"
+            "content3"
+            "footer"; 
+    }
+    .header {
+        margin: 23px 24px 0px;
+    }
+    .top-row {
+        flex-wrap: wrap;
+        margin-left: 24px;
+    }
+    .middle-row {
+        flex-wrap: wrap;
+    }
+    .bottom-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer {
+        margin-top: 96px;
+        /*margin-left: 51px;*/    
+    }
+    .header-button, .main-button {
+        width: 150px;
+        height: 48px;
+    }    
+    .main-title {
+        font-size: 48px;
+    }   
+    .main-description {
+        font-size: 16px;
+    } 
+    .keyboard, .phone-keyboard, .glass-keyboard {
+        max-width: 100%;
+        height: auto;
+    }
+    .sub-article {
+        text-align: center;
+    }
+    .feature-icon {
+        margin-left: 95px;
+    }
+    .feature-title, .feature-description {
+        text-align: center;
+    }
 }
