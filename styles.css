@@ -119,16 +119,22 @@
     width: 255px;
     height: 480px;
     border-radius: 20px;
-}
-/*.phone-keyboard-container {
-    background-color: #F16718;
     mix-blend-mode: multiply;
-}*/
+}
+.phone-keyboard-box {
+    width: 255px;
+    height: 480px;
+    border-radius: 20px;
+    background-color: #F16718;
+}
 .glass-keyboard {
     width: 445px;
     height: 480px;
     margin-left: 30px;
     border-radius: 20px;
+}
+.middle-row div {
+    display: flex;
 }
 .sub-article {
     width: 255px;
