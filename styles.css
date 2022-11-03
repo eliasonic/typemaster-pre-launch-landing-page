@@ -1,6 +1,4 @@
 #container {
-    width: 1440px;
-    height: 1870px;
     font-family: 'Barlow', sans-serif;
     display: grid;
     grid-template-columns: 165px 1110px 165px;
@@ -175,10 +173,11 @@
     line-height: 26px;
     color: #7B8BAD;
 }
-@media (max-width: 400px) {
+
+/* mobile */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
     #container {
-        max-width: 100vw;
-        grid-template-columns: 375px;
+        grid-template-columns: 100%; 
         grid-template-rows: 135px auto auto auto 172px;   
         grid-template-areas: 
             "header" 
@@ -188,18 +187,18 @@
             "footer";               
     }
     .header {
-        margin: 0px 24px 64px;
+        margin: 0 12px 64px;
     }
     .top-row {
         flex-direction: column;
-        margin: 0 0 24px 24px;
+        margin: 0 0 24px 0;
     }
     .middle-row {
         flex-direction: column;
+        margin-bottom: 63px;
     }
     .bottom-row {
         flex-direction: column;
-        align-items: center;
     }
     .footer {
         margin-top: 96px;    
@@ -211,7 +210,7 @@
     .main {
         width: 327px;
         height: 286px;
-        margin-bottom: 80px;
+        margin: 0 12px 80px;
     }
     .main-title {
         font-size: 48px;
@@ -220,7 +219,7 @@
         font-size: 16px;
     } 
     .keyboard {
-        width: 372px;
+        width: 360px; 
         height: 331px;
     }
     .phone-keyboard, .phone-keyboard-box {
@@ -235,28 +234,25 @@
     .middle-row div {
         margin-left: -12px;
     }
-    .sub-article {
+    .sub-title {
+        width: 255px;
+        height: 108px;
+        margin-left: 48px;
         text-align: center;
-        align-self: center;
-        margin-bottom: 47px;
     }
-    .sub-description {
+    .sub-description, .feature-title, .feature-description {
         width: 327px;
-        margin-left: -30px;
+        margin: 0 12px 0;
+        text-align: center;
+    }
+    .feature-icon {
+        margin-left: 143px;
+    }
+    .feature-title {
+        margin-bottom: 24px;
     }
     .feature {
         margin-top: 64px;
-    }
-    .feature-icon {
-        margin-left: 95px;
-    }
-    .feature-title {
-        text-align: center;
-    }
-    .feature-description {
-        width: 327px;
-        text-align: center;
-        margin-left: -30px;
     }
     .right-square, .left-square {
         display: none;
