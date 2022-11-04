@@ -1,7 +1,4 @@
 #container {
-    width: 1440px;
-    height: 1870px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Barlow', sans-serif;
     display: grid;
     grid-template-columns: 165px 1110px 165px;
@@ -12,6 +9,7 @@
         "side2 content2 ."
         ". content3 ."
         ". footer .";
+    overflow-x: hidden;    
 }
 .header {
     grid-area: header;
@@ -65,6 +63,10 @@
     text-transform: uppercase;
     color: #162542;
 }
+.header-button:hover {
+    background: #162542;
+    color: #FFFFFF;
+}
 .main {
     width: 445px;
     height: 312px;    
@@ -95,6 +97,10 @@
     text-transform: uppercase;
     color: #FFFFFF;
 }
+.main-button:hover {
+    background: #FF9B62;
+    color: #FFFFFF;
+}
 .info-text {
     margin-left: 40px;
     font-size: 16px;
@@ -111,12 +117,22 @@
     width: 255px;
     height: 480px;
     border-radius: 20px;
+    mix-blend-mode: multiply;
+}
+.phone-keyboard-box {
+    width: 255px;
+    height: 480px;
+    border-radius: 20px;
+    background-color: #F16718;
 }
 .glass-keyboard {
     width: 445px;
     height: 480px;
     margin-left: 30px;
     border-radius: 20px;
+}
+.middle-row div {
+    display: flex;
 }
 .sub-article {
     width: 255px;
@@ -156,4 +172,89 @@
     font-weight: 500;
     line-height: 26px;
     color: #7B8BAD;
+}
+
+/* mobile */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    #container {
+        grid-template-columns: 100%; 
+        grid-template-rows: 135px auto auto auto 172px;   
+        grid-template-areas: 
+            "header" 
+            "content1"
+            "content2"
+            "content3"
+            "footer";               
+    }
+    .header {
+        margin: 0 12px 64px;
+    }
+    .top-row {
+        flex-direction: column;
+        margin: 0 0 24px 0;
+    }
+    .middle-row {
+        flex-direction: column;
+        margin-bottom: 63px;
+    }
+    .bottom-row {
+        flex-direction: column;
+    }
+    .footer {
+        margin-top: 96px;    
+    }
+    .header-button, .main-button {
+        width: 150px;
+        height: 48px;
+    }    
+    .main {
+        width: 327px;
+        height: 286px;
+        margin: 0 12px 80px;
+    }
+    .main-title {
+        font-size: 48px;
+    }   
+    .main-description {
+        font-size: 16px;
+    } 
+    .keyboard {
+        width: 360px; 
+        height: 331px;
+    }
+    .phone-keyboard, .phone-keyboard-box {
+        width: 129px;
+        height: 193px;
+    }
+    .glass-keyboard {
+        width: 220px;
+        height: 193px;
+        margin-left: 24px;
+    }
+    .middle-row div {
+        margin-left: -12px;
+    }
+    .sub-title {
+        width: 255px;
+        height: 108px;
+        margin-left: 48px;
+        text-align: center;
+    }
+    .sub-description, .feature-title, .feature-description {
+        width: 327px;
+        margin: 0 12px 0;
+        text-align: center;
+    }
+    .feature-icon {
+        margin-left: 143px;
+    }
+    .feature-title {
+        margin-bottom: 24px;
+    }
+    .feature {
+        margin-top: 64px;
+    }
+    .right-square, .left-square {
+        display: none;
+    }
 }
